@@ -4,18 +4,17 @@ package com.mygdx.game.levels;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.mygdx.game.SpaceInvaders;
 import com.mygdx.game.abstracts.BaseScreen;
 import com.mygdx.game.actors.Fly1;
+
 import com.mygdx.game.actors.Ship;
 
 
 public class Level1 extends BaseScreen{
-    
-    //Acordarme de eliminar balas al superar el limite
+     
  
     public static Stage stage;
         
@@ -43,9 +42,9 @@ public class Level1 extends BaseScreen{
 
     @Override
     public void show() {
-        batch = new SpriteBatch();
-        createActors();
         stage = new Stage();
+        stage.setDebugAll(true);
+        createActors();
         addActors();
         
     }
@@ -56,12 +55,10 @@ public class Level1 extends BaseScreen{
     public void render(float delta) {
         
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); 
-            
-            batch.begin();                
-            fly1.render(batch);
-            batch.end();
-            stage.act();
-            stage.draw();    
+                   
+            stage.act(delta);  
+            stage.draw();
+               
             
     }
 

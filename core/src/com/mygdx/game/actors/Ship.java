@@ -7,6 +7,7 @@ import com.mygdx.game.abstracts.Bullet;
 import com.mygdx.game.abstracts.GameObject;
 import com.mygdx.game.LoadResources;
 import com.mygdx.game.SpaceInvaders;
+import com.mygdx.game.objects.BulletPlayer;
 
 
 
@@ -56,11 +57,11 @@ public class Ship extends GameObject {
     if (Gdx.input.isKeyPressed(Keys.SPACE)){
         if(canShoot){
             if(multyShoot){
-            Bullet bullet = new Bullet(LoadResources.bulletShip, (int) ((int) getX()+getWidth()/2),60,1000);
-            Bullet bulletLaserLeft = new Bullet(LoadResources.bulletLaser, (int) ((int) getX()-1),50,1000);
-            Bullet bulletLaserRight = new Bullet(LoadResources.bulletLaser, (int) ((int) getX()+29),50,1000);
+            Bullet bullet = new BulletPlayer(LoadResources.bulletShip, (int) ((int) getX()+getWidth()/2),60,1000);
+            Bullet bulletLaserLeft = new BulletPlayer(LoadResources.bulletLaser, (int) ((int) getX()-1),50,1000);
+            Bullet bulletLaserRight = new BulletPlayer(LoadResources.bulletLaser, (int) ((int) getX()+29),50,1000);
             }else{
-            Bullet bullet = new Bullet(LoadResources.bulletShip, (int) ((int) getX()+getWidth()/2),60,1000);
+            Bullet bullet = new BulletPlayer(LoadResources.bulletShip, (int) ((int) getX()+getWidth()/2),60,1000);
             }
             
     canShoot=false;}

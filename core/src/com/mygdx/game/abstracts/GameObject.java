@@ -2,7 +2,6 @@
 package com.mygdx.game.abstracts;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
@@ -27,19 +26,12 @@ public class GameObject extends Image{
     
     }
     
+
     @Override
     public void act (float delta) {
         super.act(delta);
     rectangle.setPosition(this.getX(),this.getY());
     }
-    
-    @Override
-    public void draw(Batch batch,float parentAlpha){
-    //batch.draw(texture, getX(), getY());
-    }
-    
-    public void render(Batch batch){
-    batch.draw(texture, getX(), getY());
-    }
+   
     
 }
