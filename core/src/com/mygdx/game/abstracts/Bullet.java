@@ -26,6 +26,7 @@ public class Bullet extends Image {
         rectangle =new Rectangle(this.getX(), this.getY(),
                 this.getWidth(),this.getHeight());
         Level1.stage.addActor(this);
+        
     }
     
     
@@ -34,9 +35,7 @@ public class Bullet extends Image {
     public void act (float delta) {
         super.act(delta);
         rectangle.setPosition(this.getX(),this.getY());
-        moveBy(0, speed*delta);
-        
-       
+        moveBy(0, speed*delta); 
         
     }
     

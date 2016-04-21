@@ -2,16 +2,19 @@
 package com.mygdx.game.abstracts;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.SpaceInvaders;
 
 
 
 public abstract class BaseScreen implements Screen{
     
-    protected SpaceInvaders spaceInvaders;
+    protected SpaceInvaders game;
+    protected SpriteBatch batch;
+    
     
     public  BaseScreen (SpaceInvaders spaceInvaders){
-    this.spaceInvaders=spaceInvaders;
+    this.game=spaceInvaders;
     }
 
     @Override
